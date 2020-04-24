@@ -1,0 +1,8 @@
+.vscode
+.git
+key/*
+node_modules/*
+public/*
+public/javascripts/*
+public/stylesheets/*
+public/fonts/*
