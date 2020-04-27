@@ -1,0 +1,23 @@
+<%- include('header') -%>
+<% var historyList = JSON.parse(history) %>
+
+<section id="history-section" class="site-section" data-aos="fade" style="padding: 0%;">
+    <hr class="one" color="gray">
+    <div class="container">
+      <div style="padding-top: 3rem;" class="row jsutify-content-center mb-5 text-center">
+        <div class="col-xs-4 mlg-4 col">
+          <h2 style ="margin-bottom: 2rem;">연혁</h2>
+          <table style="color: black; font-size: 1rem;" class="table">
+            <% for(var i =0; i < historyList.length; i++) {%>
+            <tbody>
+              <td><%= historyList[i].year %> </td>
+              <td><%= historyList[i].content %> </td>
+            </tbody>
+            <% } %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<%- include('footer') -%>

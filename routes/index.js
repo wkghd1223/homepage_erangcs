@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var welcome = '(주)이랑씨에스에 오신 것을 환영합니다.'
+  var welcome = '이랑씨에스에 오신 것을 환영합니다.'
   var history = [{
     "year":"2009.02",
     "content":"(주)이랑씨에스 법인 설립"

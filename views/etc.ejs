@@ -1,12 +1,13 @@
 <%- include('header') -%>
 <% var cardList = JSON.parse(card) %>
+<% var cleanList = JSON.parse(clean) %>
 
 <section id="section-facility-overview">
 	<hr class="one" color="gray">
 	<div class="container">
-		<h2 style="text-align: center;">시설관리</h2>
-		<p>이랑씨에스는 건물의 Life Cycle 연장 및 유지관리 Cost 절감을 위해 타 업체와는 차별화된 시설관리, 최적화 솔루션을 제공하여 항상 효율적인 고품질의 관리로 시설물 가치를 극대화하고 있습니다.
-		</p>
+		<h2 style="text-align:center; margin-bottom:1rem;">방역관리</h2>
+		<p style="margin-bottom:1rem;">이랑씨에스는 정밀 시설점검을 바탕으로 한 최적의 방제 서비스를 제공함으로써 고객사의 해충 발생 원인을 분석 모니터링 하여 드립니다.
+         </p>
 	</div>
 	<div class="container">
 		<div class="row mb-5 justify-content-around">
@@ -53,26 +54,34 @@
 </section>
 
 <section id="section-introduce">
+	<hr class="one" color="gray">
 	<div class="container">
-		<div class="row">
-			<div class="col text-center justify-content-center ">
-				<h2>스마트 시설관리 시스템 개요 </h2>
-				<img class="my-img" src="/images/facility_system.png" alt="스마트 시설관리 시스템 개요">
+		<h2 style="text-align:center; margin-bottom:1rem;">준공청소</h2>
+		<p style="margin-bottom:1rem;">준공청소 서비스는 체계적인 시스템으로 건물주와 입주자가 동시에 만족할 수 있도록 그 건물의 특징에 맞는 청소 서비스를 하여드립니다.
+         </p>
+    </div>
+    <div class="container">
+		<div class="row mb-5 justify-content-around">
+			<div class="card" style="width:20rem;margin:0.5rem;" >
+				<div class="row">
+					<div class="col-3 card-img-top" style="height:6rem;padding-right:0px;">
+						<img src="/images/<%=cleanList[0].title[0].src%>" alt="<%=cleanList[0].title[0].item%>" style="height:100%;">
+					</div>
+					<div class="col-9 text-center">
+						<b>
+							<h5 class="card-title" style="padding-top:0.5rem;">
+								<%= cleanList[0].title[0].name %>
+							</h5>
+						</b>
+						<p style="padding-left:0.5rem;padding-right:0.5rem;margin:0%;font-size: 11pt;text-align: center;">
+							<%=cleanList[0].title[0]._desc%>
+						</p>
+					</div>
+				</div>
+				<hr class="one" color="honeydew" style="margin: 0%;">
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col text-center justify-content-center ">
-				<h2>스마트 빌딩 운영시스템 특징점</h2>
-				<img class="my-img" src="/images/facility_system_feature.png" alt="스마트 빌딩 운영시스템 특징점">
-			</div>
-		</div>
-	</div>
-</section>
-<section id="section-status">
-	<div class="container">
-
 	</div>
 </section>
 
