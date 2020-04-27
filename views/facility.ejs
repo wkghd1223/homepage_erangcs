@@ -1,0 +1,70 @@
+<%- include('header') -%>
+<% var cardList = JSON.parse(card) %>
+
+<section id="section-facility-overview">
+	<div class="container">
+		<h2>시설관리</h2>
+		<p>이랑씨에스는 건물의 Life Cycle 연장 및 유지관리 Cost 절감을 위해 타 업체와는 차별화된 시설관리, 최적화 솔루션을 제공하여 항상 효율적인 고품질의 관리로 시설물 가치를 극대화하고 있습니다.
+		</p>
+	</div>
+	<div class="container">
+		<div class="row mb-5 justify-content-around">
+			<% for(var i =0 ; i < cardList.length; i++){ %>
+			<div class="card" style="width:20rem;margin:0.5rem;">
+				<% for(var j =0 ; j < cardList[i].title.length;j++) {%>
+				<div class="row">
+					<div class="col-3 card-img-top" style="height:6rem;padding-right:0px;">
+						<img src="/images/<%=cardList[i].title[j].src%>" alt="<%=cardList[i].title[j].item%>" style="height:100%;">
+					</div>
+					<div class="col-9 text-center">
+						<b>
+							<h5 class="card-title" style="padding-top:0.5rem;">
+								<%= cardList[i].title[j].name %>
+							</h5>
+						</b>
+						<p style="padding-left:0.5rem;padding-right:0.5rem;">
+							<%=cardList[i].title[j]._desc%>
+						</p>
+					</div>
+				</div>
+				<%  }%>
+				<div class="card-body">
+					<ul>
+						<% for(var j=0; j < cardList[i].list.length;j++){ %>
+						<li class="card-text">
+							<%= cardList[i].list[j] %>
+						</li>
+						<% }%>
+					</ul>
+				</div>
+			</div>
+			<% } %>
+		</div>
+	</div>
+</section>
+
+<section id="section-introduce">
+	<div class="container">
+		<div class="row">
+			<div class="col text-center justify-content-center ">
+				<h2>스마트 시설관리 시스템 개요 </h2>
+				<img class="my-img" src="/images/facility_system.png" alt="스마트 시설관리 시스템 개요">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col text-center justify-content-center ">
+				<h2>스마트 빌딩 운영시스템 특징점</h2>
+				<img class="my-img" src="/images/facility_system_feature.png" alt="스마트 빌딩 운영시스템 특징점">
+			</div>
+		</div>
+	</div>
+</section>
+<section id="section-status">
+	<div class="container">
+
+	</div>
+</section>
+
+<%- include('footer') -%>

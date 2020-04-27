@@ -10,7 +10,7 @@ module.exports = function(){
     app.use(express.static( 'public'));
     // view engine setup
     // app.set('views', path.join(__dirname, 'views'));
-    app.set('view engine', 'pug');
+    app.set('view engine', 'ejs');
     app.locals.pretty = true;
 
     app.use(logger('dev'));
