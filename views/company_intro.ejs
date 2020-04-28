@@ -1,0 +1,29 @@
+<%- include('header') -%>
+<% var overviewList = JSON.parse(overview) %>
+
+
+<section id="overview-section" class="site-section" data-aos="fade" style="padding: 0%;">
+    <hr class="one" color="gray">
+    <div class="container">
+      <div style="padding-top: 3rem;" class="row jsutify-content-center mb-5 text-center">
+        <div class="col-md-12 mlg-4 col">
+          <table style="color: black; font-size: 1rem;" class="table">
+            <% for(var i =0; i < overviewList.length; i++) {%>
+            <tbody>
+              <td style="color: crimson;"><%= overviewList[i].title %> </td>
+              <td><%= overviewList[i].content %> </td>
+            </tbody>
+            <% } %>
+          </table>
+        </div>
+        <div class="col-md-6 mlg-4 col">
+          <img src="../images/overview_1.png" width="300rem" height="492rem" alt="overview_1">
+        </div>
+        <div class="col-md-6 mlg-4 col">
+            <img src="../images/overview_2.png" width="300rem" height="492rem" alt="overview_2">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('footer') -%>

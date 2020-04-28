@@ -1,0 +1,56 @@
+<%- include('header') -%>
+<% var cardList = JSON.parse(card) %>
+
+<section id="section-safety-client">
+	<hr class="one" color="gray">
+	<div class="container">
+		<h2 style="text-align: center;">방역관리 현황</h2>
+        <% for(var i=0; i< cardList.length;i++){%>
+        <section>
+            <div>
+                <p><%= cardList[i].title %></p>
+                <table class="table">
+                    <thead>
+                        <%for(var j=0; j<cardList[i].sub_title.length;j++){%>
+                        <td>
+                            <%= cardList[i].sub_title[j]%>
+                        </td>
+                        <%}%>
+                    </thead>
+                    <%for(var j=0; j<cardList[i].content.length;j++){%>
+                    <tbody>
+                        <td>
+                            <%= cardList[i].content[j].type%>
+                        </td>
+                        <td>
+                            <%= cardList[i].content[j]._desc%>
+                        </td>
+                    </tbody>
+                    <%}%>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <%for(var j=0; j<cardList[i].client_info.length;j++){%>
+                    <tbody>
+                        <td style="background-color: green; color: white; text-align: center; font-size: 10pt; ">
+                            <%= cardList[i].client_info[j].name%>
+                        </td>
+                        <td style="background-color: black; color: white; text-align: center; font-size: 10pt; ">
+                            <%= cardList[i].client_info[j].address%>
+                        </td>
+                        <td style="background-color: blue; color: white; text-align: center; font-size: 10pt; ">
+                            <%= cardList[i].client_info[j].type%>
+                        </td>
+                    </tbody>
+                    <%}%>
+                </table>
+            </div>
+        </section>
+        <%}%>
+    </div>
+    
+	
+</section>
+
+<%- include('footer') -%>
