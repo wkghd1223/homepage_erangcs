@@ -1,0 +1,43 @@
+<%- include('header') -%>
+<% var cardList = JSON.parse(card) %>
+
+<section id="section-introduce">
+	<hr class="one" color="gray">
+	<div class="container">
+		<h2 style="text-align:center; margin-bottom:1rem;">준공청소</h2>
+		<p style="margin-bottom:1rem;">준공청소 서비스는 체계적인 시스템으로 건물주와 입주자가 동시에 만족할 수 있도록 그 건물의 특징에 맞는 청소 서비스를 하여드립니다.
+		</p>
+	</div>
+	<div class="container">
+		<div class="row mb-5 justify-content-around">
+			<% for (var i=0; i < cardList.length;i++){%>
+			<div class="card" style="width:60rem;margin:0.5rem;">
+				<div class="row">
+					<div class="col-3 card-img-top" style="height:6rem;padding-right:0px;">
+						<img src="/images/<%=cardList[i].src%>" alt="<%=cardList[i].item%>"
+							style="height:100%;">
+					</div>
+					<div class="col-9 text-center">
+						<b>
+							<h5 class="card-title" style="padding-top:0.5rem;">
+								<%= cardList[i].name %>
+							</h5>
+						</b>
+						<% for (var j=0;j<cardList[i].sub.length;j++){%>
+						<div class="card" style="width:10rem;margin:0.5rem;">
+							<div class="card-title">
+								<%=cardList[i].sub[j].title%>
+							</div>
+							<p style="font-size: 10pt;">
+								<%=cardList[i].sub[j].descript%>
+							</p>
+						</div>
+						<%}%>
+					</div>
+				</div>
+			</div>
+			<%}%>
+		</div>
+</section>
+
+<%- include('footer') -%>
