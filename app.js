@@ -1,6 +1,5 @@
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var serviceRouter = require('./routes/service');
 var companyRouter = require('./routes/company');
 var facilityRouter = require('./routes/facility');
 var safetyRouter = require('./routes/safety');
@@ -12,7 +11,6 @@ var app = require('./config/express')();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/service',serviceRouter);
 app.use('/company',companyRouter);
 app.use('/facility',facilityRouter);
 app.use('/safety',safetyRouter);
