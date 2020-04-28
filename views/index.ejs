@@ -11,7 +11,7 @@
         <div class="row justify-content-center mb-4">
           <div class="col-md-8 text-center">
             <strong>
-              <h1 style="color: whitesmoke; font-size: 2rem;"><%= welcome %> </h1>
+              <h2 style="color: whitesmoke;"><%= welcome %></h2>
             </strong>
           </div>
         </div>
@@ -37,7 +37,7 @@
         </table>
       </div>
       <div class="col-sm">
-        <img src="images/chart.png" alt="chart"  style="width: 100%;">
+        <img src="images/chart.png" alt="chart" style="width: 100%;">
       </div>
     </div>
   </div>
@@ -46,19 +46,19 @@
 <section id="summary-section" class="site-section" data-aos="fade" style="padding-top: 0%;">
   <hr class="one" color="gray">
   <div class="container">
-    <div class="text-center" style="margin-bottom: 4rem;">
-      <h2 style="padding-top: 1rem">주요서비스</h2>
+      <h3 style="padding:2rem; text-align: center;"><%= service %></h3>
+  </div>
+  <div class="card-deck">
+    <% for(var i=0; i<summaryList.length; i++){%>
+      <div class="card col-sm">
+        <img src="images/<%= summaryList[i].src %>" class="card-img-top" alt="<%= summaryList[i].title %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= summaryList[i].title %></h5>
+          <p class="card-text"><%= summaryList[i].description %></p>
+        </div>
     </div>
+    <%}%>
   </div>
-  <div class="container">
-    <ul>
-      <% for(var i=0; i<summaryList.length;i++){ %>
-      <li>
-        <h4><%= summaryList[i].title %> </h4>
-        <p style="padding-bottom: 1rem;"><%= summaryList[i].description %> </p>
-      </li>
-      <% } %>
-    </ul>
-  </div>
+</section>
 
   <%- include('footer') -%>
