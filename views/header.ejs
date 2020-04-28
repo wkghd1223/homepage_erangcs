@@ -2,82 +2,85 @@
 <html>
 
 <head>
-    <title>ERANGCS</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ERANGCS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
 
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/jquery-ui.css">
-    <link rel="stylesheet" href="/stylesheets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="/stylesheets/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="/stylesheets/aos.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/jquery-ui.css">
+  <link rel="stylesheet" href="/stylesheets/owl.carousel.min.css">
+  <link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/stylesheets/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="/stylesheets/aos.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body data-spy="affix" data-target=".site-navbar-target" data-offset="300">
-    <% var ip = 'localhost:3000' %> 
-    <div class="site-wrap">
+  <% var ip = 'localhost:3000' %>
+  <div class="site-wrap">
 
-        <div class="site-mobile-menu site-navbar-target">
-            <div class="site-mobile-menu-header">
-                <div class="site-mobile-menu-close mt-3">
-                    <span class="icon-close2 js-menu-toggle"></span>
-                </div>
-            </div>
-            <div class="site-mobile-menu-body"></div>
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
         </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
 
 
-        <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
+    <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
 
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-11 col-xl-2">
-                        <a href="http://<%=ip%>"><img class="mb-0 site-logo text-primary" alt="logo"
-                                src="/images/logo.png" width="150rem"></a>
-                    </div>
-                    <div class="col-12 col-md-10 d-none d-xl-block">
-                        <nav class="site-navigation position-relative text-right" role="navigation">
-                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                                <li class="has-children">
-                                    <a href="#" class="nav-link">회사소개</a>
-                                    <ul class="dropdown">
-                                        <li><a href="/company/history">연혁</a></li>
-                                        <li><a href="/company/client">고객사</a></li>
-                                        <li><a href="/company/certification">자격증</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-children">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-11 col-xl-2">
+            <a href="http://<%=ip%>"><img class="mb-0 site-logo text-primary" alt="logo" src="/images/logo.png"
+                width="150rem"></a>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="has-children">
+                  <a href="/company/overview" class="nav-link">회사소개</a>
+                  <ul class="dropdown">
+                    <li><a href="#history-section">연혁</a></li>
+                    <li><a href="/company/client">고객사</a></li>
+                    <li><a href="/company/certification">자격증</a></li>
+                  </ul>
+                </li>
+                <li><a href="/facility" class="nav-link">시설관리</a></li>
+                <li><a href="/safety" class="nav-link">안전관리</a></li>
+                <li><a href="/etc" class="nav-link">기타</a></li>
+                <!-- <li class="has-children">
                                     <a href="/service/facility" class="nav-link">주요서비스</a>
                                     <ul class="dropdown">
                                         <li><a href="/service/facility">시설관리</a></li>
                                         <li><a href="/service/safety">안전관리</a></li>
                                         <li><a href="/service/etc">기타</a></li>
                                     </ul>
-                                </li>
-                                <li><a href="/qna" class="nav-link">문의하기</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+                                </li> -->
+                <li><a href="/qna" class="nav-link">문의하기</a></li>
+              </ul>
+            </nav>
+          </div>
 
-                    <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 0rem;">
-                        <a href="/" class="site-menu-toggle js-menu-toggle text-black">
-                            <span class="icon-menu h3"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </header>
-        <div class="container" style="height: 7rem;margin-top:0;">
-            
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 0rem;">
+            <a href="/" class="site-menu-toggle js-menu-toggle text-black">
+              <span class="icon-menu h3"></span>
+            </a>
+          </div>
         </div>
+      </div>
+
+    </header>
+    <div class="container" style="height: 7rem;margin-top:0;">
+
+    </div>
