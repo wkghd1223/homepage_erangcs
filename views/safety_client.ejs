@@ -2,20 +2,30 @@
 <% var cardList = JSON.parse(card) %>
 
 <section id="section-safety-client">
-	<hr class="one" color="gray">
-	<div class="container">
-		<h2 style="text-align: center;">안전관리 현황</h2>
+    <hr class="one" color="gray">
+    <div class="container">
+        <h2 style="text-align: center;">안전관리 현황</h2>
         <% for(var i=0; i< cardList.length;i++){%>
         <section>
             <div>
-                <p><%= cardList[i].title %></p>
-                <table class="table">
+                <b>
+                    <h3 class="text-danger">
+                        <svg class="bi bi-pentagon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 1.288l-6.842 5.56L3.733 15h8.534l2.575-8.153L8 1.288zM16 6.5L8 0 0 6.5 3 16h10l3-9.5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <%= cardList[i].title %>
+                    </h3>
+                </b>
+                <table class="table table-bordered text-center" style="width: 100%;">
                     <thead>
-                        <%for(var j=0; j<cardList[i].sub_title.length;j++){%>
-                        <td>
-                            <%= cardList[i].sub_title[j]%>
-                        </td>
-                        <%}%>
+                        <tr style="background-color: ivory;">
+                            <%for(var j=0; j<cardList[i].sub_title.length;j++){%>
+                            <th scope="col"><%= cardList[i].sub_title[j]%></th>
+                            <%}%>
+                        </tr>
                     </thead>
                     <%for(var j=0; j<cardList[i].content.length;j++){%>
                     <tbody>
@@ -30,16 +40,16 @@
                 </table>
             </div>
             <div>
-                <table>
+                <table class="table table-bordered" style="font-size: 12px;">
                     <%for(var j=0; j<cardList[i].client_info.length;j++){%>
-                    <tbody>
-                        <td style="background-color: orangered; color: white; text-align: center; font-size: 10pt; ">
+                    <tbody style="height: 3px;">
+                        <td class="my-gradient">
                             <%= cardList[i].client_info[j].name%>
                         </td>
-                        <td style="background-color: black; color: white; text-align: center; font-size: 10pt; ">
+                        <td class="my-cell">
                             <%= cardList[i].client_info[j].address%>
                         </td>
-                        <td style="background-color: blue; color: white; text-align: center; font-size: 10pt; ">
+                        <td class="my-cell text-center">
                             <%= cardList[i].client_info[j].type%>
                         </td>
                     </tbody>
@@ -48,9 +58,9 @@
             </div>
         </section>
         <%}%>
-    </div>
-    
-	
-</section>
+            </div>
 
-<%- include('footer') -%>
+
+        </section>
+
+        <%- include('footer') -%>
