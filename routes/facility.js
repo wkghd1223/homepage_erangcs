@@ -58,10 +58,19 @@ router.get('/intro', function(req, res, next) {
 });
 
 router.get('/system',function(req, res, next){
-    res.render('facility_system',{title: 'facility_system'});
+    var system1 = "시설관리 기술 개요";
+    var system2 = "기술 특징점";
+
+    res.render('facility_system',{
+        system1: system1,
+        system2: system2,
+        title: 'facility_system'
+    });
 });
 
 router.get('/client',function(req, res, next){
+    var client1 = "시설관리 고객 현황";
+    var client2 = "ㅌ";
     var card =[
         {
             title: "골프장",
@@ -161,6 +170,8 @@ router.get('/client',function(req, res, next){
     }];
     card = JSON.stringify(card);
     res.render('facility_client',{
+        client1: client1,
+        client2: client2,
         title: "facility_client",
         card: card
     });
