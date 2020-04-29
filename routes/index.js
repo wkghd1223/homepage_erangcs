@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+// var bodyParser = require('body-parser');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -72,5 +74,47 @@ router.get('/', function(req, res, next) {
 router.get('/contact',function(req, res, next){
   res.render('contact',{title: 'contact'});
 });
+
+router.post('/contact',function(req, res, next){
+  
+  var tel = req.body.tel;
+  var company = req.body.company;
+  var service = req.body.service;
+  var complain = req.body.complain;
+  var date = new Date();
+
+  var data = {
+    'tel':tel,
+    'company': company,
+    'service': service,
+    'complain': complain,
+    'timestamp':date
+  }
+  // data = JSON.stringify(data);
+  // console.log(data);
+
+  fs.readFile('public/write.json',(err, file)=>{
+    console.log("file\t|"+file);
+    var jsonData = JSON.parse(file);
+    jsonData.push(data);
+    console.log(jsonData);
+    jsonData = JSON.stringify(jsonData);
+    fs.writeFile('public/write.json', jsonData, ()=>{
+    });
+  });
+  res.redirect('/');
+});
+
+router.get('/admin',function(req, res, next){
+  console.log('admin\t|');
+  fs.readFile('public/write.json',(err, file)=>{
+    file = JSON.parse(file);
+    file.sort(function (a, b){return  a.timestamp > b.timestamp ? true : false});
+    console.log(file);
+    file= JSON.stringify(file);
+    res.render('admin',{file: file});
+  });
+});
+
 
 module.exports = router;

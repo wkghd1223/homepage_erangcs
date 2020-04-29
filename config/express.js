@@ -1,24 +1,27 @@
-module.exports = function(){
-    var createError = require('http-errors');
-    var express = require('express');
-    var path = require('path');
-    var cookieParser = require('cookie-parser');
-    var logger = require('morgan');
-        
-    var app = express();
-    
-    app.use(express.static( 'public'));
-    // view engine setup
-    // app.set('views', path.join(__dirname, 'views'));
-    app.set('view engine', 'ejs');
-    app.locals.pretty = true;
+module.exports = function () {
+	var express = require('express');
+	var bodyParser = require('body-parser');
+	var compression = require('compression');
+	var helmet = require('helmet');
+	const cookieParser = require('cookie-parser');
 
-    app.use(logger('dev'));
-    app.use(express.json());
-    app.use(express.urlencoded({ extended: true }));
-    app.use(cookieParser());
-
-    return app;
-}
+	var app = express();
 
 
+	app.set('view engine', 'ejs');
+
+	app.use(express.static('public'));
+	// app.use(express.static(path.join(__dirname,'/public')));
+	
+	app.use(compression());
+	app.use(helmet());
+
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({
+		extended: true
+	}));
+	app.use(cookieParser());
+	 
+
+	return app; 
+}     
