@@ -12,8 +12,8 @@ router.get('/', function (req, res, next) {
 router.get('/intro', function (req, res, next) {
     var cleaning_title = '준공청소 서비스 소개';
     var cleaning_info = `준공청소 서비스는 체계적인 시스템으로 건물주와 입주자가 동시에 만족할 수 있도록 그 건물의 특징에 맞는 청소 서비스를 하여드립니다.`;
-    var card = [{
-        src: "etc_2.png",
+    var card = {
+        src: "facility_2.png",
         name: "준공청소",
         sub: [{
             title: "01. 고객과의 의견교환",
@@ -41,7 +41,7 @@ router.get('/intro', function (req, res, next) {
             descript: "고객 확인 후 청소완료 대금 지불"
         },],
 
-    },];
+    };
     card = JSON.stringify(card);
     res.render('cleaning_intro', {
         cleaning_title, cleaning_title,
