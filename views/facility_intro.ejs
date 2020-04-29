@@ -2,41 +2,38 @@
 <% var cardList = JSON.parse(card) %>
 
 <section id="section-facility-overview">
-	<hr class="one" color="gray">
 	<div class="container">
-		<h2 style="text-align: center;">시설관리</h2>
-		<p>이랑씨에스는 건물의 Life Cycle 연장 및 유지관리 Cost 절감을 위해 타 업체와는 차별화된 시설관리, 최적화 솔루션을 제공하여 항상 효율적인 고품질의 관리로 시설물 가치를 극대화하고 있습니다.
-		</p>
+		<h3 class="col-xl-4 col-md-6"><%= facility_title %></h3>
+		<p><%=facility_info%></p>
 	</div>
 	<div class="container">
 		<div class="row mb-5 justify-content-around">
 			<% for(var i =0 ; i < cardList.length; i++){ %>
-			<div class="card" style="width:20rem;margin:0.5rem;" >
+			<div class="card" style="width:20rem;margin:0.5rem;">
 				<% for(var j =0 ; j < cardList[i].title.length;j++) {%>
 				<div class="row">
 					<div class="col-3 card-img-top" style="height:6rem;padding-right:0px;">
-						<img src="/images/<%=cardList[i].title[j].src%>" alt="<%=cardList[i].title[j].item%>" style="height:100%;">
+						<img src="/images/<%=cardList[i].title[j].src%>" alt="<%=cardList[i].title[j].item%>"
+							style="height:100%;">
 					</div>
 					<div class="col-9 text-center">
 						<b>
-							<h5 class="card-title" style="padding-top:0.5rem;">
+							<h5 class="card-title">
 								<%= cardList[i].title[j].name %>
 							</h5>
 						</b>
-						<p style="padding-left:0.5rem;padding-right:0.5rem;margin:0%;font-size: 11pt;text-align: center;">
+						<p
+							style="font-size: 10pt; padding-left: 3%;">
 							<%=cardList[i].title[j]._desc%>
 						</p>
 					</div>
 				</div>
 				<hr class="one" color="honeydew" style="margin: 0%;">
 				<% }%>
-				<div class="card-body" style="padding: 0%; font-size: 11pt; color:crimson; text-align: center;" >
+				<p class="card-body" style="margin: 0%; padding: 0%; font-size: 11pt; text-align: center;">
 					<%=cardList[i].content_highlight%>
-				</div>
-				<div class="card-body" style="padding: 0%; font-size: 11pt; text-align: center;">
-					<%=cardList[i].content%>
-				</div>
-
+					<br><%=cardList[i].content%>
+				</p>
 				<div class="card-body" style="padding: 0%; font-size: 11pt;">
 					<ul>
 						<% for(var j=0; j < cardList[i].list.length;j++){ %>

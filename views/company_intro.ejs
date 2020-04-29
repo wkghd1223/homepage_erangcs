@@ -3,30 +3,40 @@
 
 
 <section id="overview-section" class="site-section" data-aos="fade" style="padding: 0%;">
-    <hr class="one" color="gray">
-    <div class="container">
-      <div style="padding-top: 3rem;" class="row jsutify-content-center mb-5 text-center">
-        <div class="col-md-12 mlg-4 col">
-          <table style="color: black; font-size: 1rem;" class="table">
+  <hr class="one" color="gray">
+  <div class="container">
+    <div style="padding-top: 3rem;" class="row jsutify-content-center mb-5 text-center">
+      <div class="col-md-12 mlg-4 col">
+        <table style="color: black; font-size: 1rem;" class="table table-bordered">
+          <tbody>
             <% for(var i =0; i < overviewList.length; i++) {%>
-            <tbody>
-              <td style="color: crimson;"><strong><%= overviewList[i].title %></strong></td>
+            <tr>
+              <th scope="col"><%=overviewList[i].title%></th>
               <td><%= overviewList[i].content %> </td>
-            </tbody>
+            </tr>
             <% } %>
-          </table>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <img src="../images/overview_1.png" style="width: 80%;" alt="overview_1">
-          </div>
-          <div class="col-sm">
-              <img src="../images/overview_2.png" style="width: 80%;" alt="overview_2">
-          </div>
-        </div>
-        
+          </tbody>
+        </table>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <%- include('footer') -%>
+<section id="overview-section2" class="site-section" data-aos="fade" style="padding: 0%;">
+  <hr align="center" class="one" color="gray" width="80%">
+  <div class="container">
+    <div style="padding-top: 3rem;" class="row jsutify-content-center mb-5 text-center">
+      <div class="row">
+        <div class="col-md">
+          <img src="../images/overview_1.png" style="width: 80%;" alt="overview_1">
+        </div>
+        <div class="col-md">
+          <img src="../images/overview_2.png" style="width: 80%;" alt="overview_2">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<%- include('footer') -%>

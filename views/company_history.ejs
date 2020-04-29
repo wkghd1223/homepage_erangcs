@@ -5,15 +5,16 @@
     <hr class="one" color="gray">
     <div class="container">
       <div style="padding-top: 3rem;" class="row jsutify-content-center mb-5 text-center">
-        <div class="col-xs-4 mlg-4 col">
-          <h2 style ="margin-bottom: 2rem;">연혁</h2>
-          <table style="color: black; font-size: 1rem;" class="table">
-            <% for(var i =0; i < historyList.length; i++) {%>
+        <div class="col-md-12 mlg-4 col">
+          <table style="color: black; font-size: 1rem;" class="table table-bordered">
             <tbody>
-              <td><%= historyList[i].year %> </td>
-              <td><%= historyList[i].content %> </td>
-            </tbody>
+            <% for(var i =0; i < historyList.length; i++) {%>
+              <tr>
+                <th><%= historyList[i].year %> </th>
+                <td><%= historyList[i].content %> </td>
+              </tr>
             <% } %>
+          </tbody>
           </table>
         </div>
       </div>
