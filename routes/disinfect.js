@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('disinfect', { title: 'disinfect' });
 });
 router.get('/intro', function(req, res, next){
-    var card = [
+    var infect = [
         {
             title:[{
                 src:"etc_1.png",
@@ -18,16 +18,6 @@ router.get('/intro', function(req, res, next){
             list:["외부해충유입진단", "건물내모니터링", "해충서식지박멸", "해충별약품선별", "정화조특별관리"]
         },
     ];
-    card = JSON.stringify(card);
-
-    res.render('disinfect_intro', { 
-        title: 'disinfect_intro',
-        card: card,
-    });
-
-});
-
-router.get('/client',function(req, res, next){
     var card =[
         {
             title: "방역관리",
@@ -46,6 +36,19 @@ router.get('/client',function(req, res, next){
                 type: "방역 / 청소"
             }]
     }];
+    infect = JSON.stringify(infect);
+    card = JSON.stringify(card);
+
+    res.render('disinfect_intro', { 
+        title: 'disinfect_intro',
+        infect: infect,
+        card: card
+    });
+
+});
+
+router.get('/client',function(req, res, next){
+
     card = JSON.stringify(card);
     res.render('disinfect_client',{
         title: "disinfect_client",

@@ -1,17 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('facility', { title: 'facility' });
-});
-
-
-router.get('/intro', function(req, res, next) {
     var facility_title = "시설관리 서비스 소개"
     var facility_info = `이랑씨에스는 건물의 Life Cycle 연장 및 유지관리 Cost 절감을 위해 타 업체와는 차별화된 시설관리,
     최적화 솔루션을 제공하여 항상 효율적인 고품질의 관리로 시설물 가치를 극대화하고 있습니다.`
-    var card =[
+    var system1 = "시설관리 기술 개요";
+    var system2 = "기술 특징점";
+    var intro =[
         {   
             title:[{
                 src:"facility_1.png",
@@ -48,29 +44,7 @@ router.get('/intro', function(req, res, next) {
             list:["시설경비", "시설보안", "주차보안", "안내데스크"]
         },
     ];
-    card = JSON.stringify(card);
-    res.render('facility_intro', { 
-        title: 'facility_intro',
-        facility_title: facility_title,
-        facility_info: facility_info,
-        card: card
-    });
-});
-
-router.get('/system',function(req, res, next){
-    var system1 = "시설관리 기술 개요";
-    var system2 = "기술 특징점";
-
-    res.render('facility_system',{
-        system1: system1,
-        system2: system2,
-        title: 'facility_system'
-    });
-});
-
-router.get('/client',function(req, res, next){
-    var client1 = "시설관리 고객 현황";
-    var client2 = "ㅌ";
+    
     var card =[
         {
             title: "골프장",
@@ -168,12 +142,17 @@ router.get('/client',function(req, res, next){
             type: "미화/안내"
         }]
     }];
+    intro = JSON.stringify(intro);
     card = JSON.stringify(card);
-    res.render('facility_client',{
-        client1: client1,
-        client2: client2,
-        title: "facility_client",
-        card: card
+
+    res.render('facility', { 
+        title: 'facility',
+        system1: system1,
+        system2: system2,
+        facility_title: facility_title,
+        facility_info: facility_info,
+        intro: intro,
+        card,card
     });
 });
 

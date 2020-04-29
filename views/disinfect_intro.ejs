@@ -1,4 +1,5 @@
 <%- include('header') -%>
+<% var infectIntro = JSON.parse(infect) %>
 <% var cardList = JSON.parse(card) %>
 
 <section id="section-facility-overview">
@@ -9,37 +10,37 @@
 	</div>
 	<div class="container">
 		<div class="row mb-5 justify-content-around">
-			<% for(var i =0 ; i < cardList.length; i++){ %>
+			<% for(var i =0 ; i < infectIntro.length; i++){ %>
 			<div class="card" style="width:20rem;margin:0.5rem;" >
-				<% for(var j =0 ; j < cardList[i].title.length;j++) {%>
+				<% for(var j =0 ; j < infectIntro[i].title.length;j++) {%>
 				<div class="row">
 					<div class="col-3 card-img-top" style="height:6rem;padding-right:0px;">
-						<img src="/images/<%=cardList[i].title[j].src%>" alt="<%=cardList[i].title[j].item%>" style="height:100%;">
+						<img src="/images/<%=infectIntro[i].title[j].src%>" alt="<%=infectIntro[i].title[j].item%>" style="height:100%;">
 					</div>
 					<div class="col-9 text-center">
 						<b>
 							<h5 class="card-title" style="padding-top:0.5rem;">
-								<%= cardList[i].title[j].name %>
+								<%= infectIntro[i].title[j].name %>
 							</h5>
 						</b>
 						<p style="padding-left:0.5rem;padding-right:0.5rem;margin:0%;font-size: 11pt;text-align: center;">
-							<%=cardList[i].title[j]._desc%>
+							<%=infectIntro[i].title[j]._desc%>
 						</p>
 					</div>
 				</div>
 				<% }%>
 				<div class="card-body" style="padding: 0%; font-size: 11pt; color:crimson; text-align: center;" >
-					<%=cardList[i].content_highlight%>
+					<%=infectIntro[i].content_highlight%>
 				</div>
 				<div class="card-body" style="padding: 0%; font-size: 11pt; text-align: center;">
-					<%=cardList[i].content%>
+					<%=infectIntro[i].content%>
 				</div>
 
 				<div class="card-body" style="padding: 0%; font-size: 11pt;">
 					<ul>
-						<% for(var j=0; j < cardList[i].list.length;j++){ %>
+						<% for(var j=0; j < infectIntro[i].list.length;j++){ %>
 						<li class="card-text">
-							<%= cardList[i].list[j] %>
+							<%= infectIntro[i].list[j] %>
 						</li>
 						<% }%>
 					</ul>
@@ -48,6 +49,70 @@
 			<% } %>
 		</div>
 	</div>
+</section>
+
+<section id="section-safety-client">
+	<div class="container">
+		<h2 style="text-align: center;">방역관리 현황</h2>
+        <% for(var i=0; i< cardList.length;i++){%>
+            <section>
+                <div>
+                    <b>
+                        <h3 class="text-info">
+                            <svg class="bi bi-pentagon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 1.288l-6.842 5.56L3.733 15h8.534l2.575-8.153L8 1.288zM16 6.5L8 0 0 6.5 3 16h10l3-9.5z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <%= cardList[i].title %>
+                        </h3>
+                    </b>
+                    <table class="table table-bordered text-center" style="width: 100%;">
+                        <thead>
+                            <tr style="background-color: ivory;">
+                                <th scope="col" style="width: 30%;">
+                                    관리분야
+                                </th>
+                                <th scope="col" style="width: 70%;">
+                                    관리내용
+                                </th>
+                            </tr>
+                        </thead>
+                        <%for(var j=0; j<cardList[i].content.length;j++){%>
+                        <tbody>
+                            <td>
+                                <%= cardList[i].content[j].type%>
+                            </td>
+                            <td>
+                                <%= cardList[i].content[j]._desc%>
+                            </td>
+                        </tbody>
+                        <%}%>
+                    </table>
+                </div>
+                <div>
+                    <table class="table table-bordered" style="font-size: 12px;">
+                        <%for(var j=0; j<cardList[i].client_info.length;j++){%>
+                        <tbody>
+                            <td class="cleaning-gradient">
+                                <%= cardList[i].client_info[j].name%>
+                            </td>
+                            <td class="my-cell">
+                                <%= cardList[i].client_info[j].address%>
+                            </td>
+                            <td class="my-cell text-center">
+                                <%= cardList[i].client_info[j].type%>
+                            </td>
+                        </tbody>
+                        <%}%>
+                    </table>
+                </div>
+            </section>
+            <%}%>
+    </div>
+    
+	
 </section>
 
 <%- include('footer') -%>
