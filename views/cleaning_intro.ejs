@@ -2,40 +2,42 @@
 <% var cardList = JSON.parse(card) %>
 
 <section id="section-introduce">
-
-	<div class="container">
-		<h3><%= cleaning_title %></h3>
+	<div class="container" style="padding: 0%;">
+		<h3 class="font-weight-bold"><%= cleaning_title %></h3>
 		<p> <%= cleaning_info %> </p>
-	</div>
-	<div class="container">
 		<div class="row mb-5 justify-content-around">
-			<% for (var i=0; i < cardList.length;i++){%>
-			<div class="card" style="width:60rem;margin:0.5rem;">
+			<div class="card">
 				<div class="row">
-					<div class="col-3 card-img-top" style="height:6rem;padding-right:0px;">
-						<img src="/images/<%=cardList[i].src%>" alt="<%=cardList[i].item%>"
-							style="height:100%;">
-					</div>
-					<div class="col-9 text-center">
-						<b>
-							<h5 class="card-title" style="padding-top:0.5rem;">
-								<%= cardList[i].name %>
-							</h5>
-						</b>
-						<% for (var j=0;j<cardList[i].sub.length;j++){%>
-						<div class="card" style="width:10rem;margin:0.5rem;">
-							<div class="card-title">
-								<%=cardList[i].sub[j].title%>
-							</div>
-							<p style="font-size: 10pt;">
-								<%=cardList[i].sub[j].descript%>
-							</p>
+					<div class="col-xs-12 col-md-2" style="margin-top:14px;">
+						<div class="row justify-content-around">
+							<img src="/images/<%=cardList.src%>" alt="준공청소" style="width: 70%;">
 						</div>
-						<%}%>
+								<div class="row justify-content-around">
+									<h5 class="card-title font-weight-bold">
+										<%= cardList.name %>
+									</h5>	
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-md-10 text-center">
+						<div class="row" style="margin-top:10px; margin-bottom:10px;">
+							<% for (var j=0;j<cardList.sub.length;j++){%>
+								<div class="col-xs-12 col-md-6 col-lg-3">
+									<div class="card" style="margin-top:4px; margin-bottom:4px;">
+										<strong><b><div class="card-title text-info">
+											<%=cardList.sub[j].title%>
+										</div>
+										<p></b></strong>
+											<%=cardList.sub[j].descript%>
+										</p>
+									</div>
+								</div>
+							<%}%>
+							
+						</div>
 					</div>
 				</div>
 			</div>
-			<%}%>
 		</div>
 </section>
 
