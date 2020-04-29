@@ -2,31 +2,62 @@
 
 <hr class="one" color="gray">
 <p class="my_p"></p>
-<form action="MAILTO:dnflemf012@naver.com" method="POST" enctype="text/plain" style="width: 30rem;margin: 0 auto;">
-    <div class="form-group">
-        <label for="exampleFormControlInput1">연락처</label>
-        <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="ex) 010-0000-0000">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">회사명</label>
-        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="ex) 주식회사 이랑씨에스">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">원하는 서비스를 선택해주세요.</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>시설 관리 서비스</option>
-            <option>안전 관리 서비스</option>
-            <option>방역 관리 서비스</option>
-            <option>기타</option>
-        </select>
-    </div>
+<div class="container">
+	<div class="row">
+		<form class="col-xs-12 col-md-6 needs-validation" action="/contact" method="POST" style="widows: 100%;margin: 0 auto;" novalidate>
+			
+			<div class="form-group">
+				<label for="exampleFormControlInput1">연락처</label>
+				<input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="ex) 010-0000-0000" name='tel' required>
 
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlInput1">회사명</label>
+				<input type="text" class="form-control" id="exampleFormControlInput2" placeholder="ex) 주식회사 이랑씨에스" name='company' required>
 
-    <input type="submit" value="submit">
-</form>
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlSelect1">원하는 서비스를 선택해주세요.</label>
+				<select class="form-control" id="exampleFormControlSelect1"  name='service'>
+					<option>시설 관리 서비스</option>
+					<option>안전 관리 서비스</option>
+					<option>방역 관리 서비스</option>
+					<option>기타</option>
+				</select>
+			</div>
 
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1">문의 내용을 적어주세요</label>
+				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='complain' required></textarea>
+			</div>
+
+			<div class=" text-center">
+				<button id="submit" class="btn btn-danger" type="submit">제출하기</button>
+			</div>
+		</form>
+	</div>
+<br>
+<br>
+</div>
+<script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function() {
+		'use strict';
+		window.addEventListener('load', function() {
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.getElementsByClassName('needs-validation');
+			// Loop over them and prevent submission
+			var validation = Array.prototype.filter.call(forms, function(form) {
+				form.addEventListener('submit', function(event) {
+					if (form.checkValidity() === false) {
+						event.preventDefault();
+						event.stopPropagation();
+					}
+					form.classList.add('was-validated');
+				}, false);
+			});
+		}, false);
+	})();
+
+	</script>
 <%- include('footer') -%>

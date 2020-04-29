@@ -1,3 +1,5 @@
+var app = require('./config/express')();
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var companyRouter = require('./routes/company');
@@ -7,7 +9,6 @@ var disinfectRouter = require('./routes/disinfect');
 var cleaningRouter = require('./routes/cleaning');
 
 
-var app = require('./config/express')();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
