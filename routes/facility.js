@@ -8,6 +8,9 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/intro', function(req, res, next) {
+    var facility_title = "시설관리 서비스 소개"
+    var facility_info = `이랑씨에스는 건물의 Life Cycle 연장 및 유지관리 Cost 절감을 위해 타 업체와는 차별화된 시설관리,
+    최적화 솔루션을 제공하여 항상 효율적인 고품질의 관리로 시설물 가치를 극대화하고 있습니다.`
     var card =[
         {   
             title:[{
@@ -48,6 +51,8 @@ router.get('/intro', function(req, res, next) {
     card = JSON.stringify(card);
     res.render('facility_intro', { 
         title: 'facility_intro',
+        facility_title: facility_title,
+        facility_info: facility_info,
         card: card
     });
 });

@@ -1,19 +1,51 @@
 <%- include('header') -%>
+<% var cardList = JSON.parse(card) %>
 
-
-<section id="client-section" class="site-section" data-aos="fade" style="padding: 0%;">
-    <hr class="one" color="gray">
+<hr class="one" color="black">
+<% for (var i=0; i<cardList.length; i++){ %>
+  <% if (i!=0){ %>   
+  <hr align="center" class="one" color="gray" width="80%">
+  <% } %> 
+    <section id="client-section" class="site-section" data-aos="fade" style="padding: 0%;">
     <div class="container">
-      <div style="padding-top: 3rem;" class="row jsutify-content-center mb-5 text-center">
-        <div class="col-xs-4 mlg-4 col">
-            <img src="../images/facilityclients.png" alt="chart">
+      <h3 class="col-xl-4 col-md-6"><%= cardList[i].managing_type %></h3>
+      <% for (var j=0; j<cardList[i].content.length; j++){ %>
+        <h5 class="col-xl-2 col-md-3" style="text-align: center; border: 1px solid black; padding: 3px;"><%= cardList[i].content[j].subtitle%></h5>
+        <div class="row row-cols-1 row-cols-md-3">
+          <% for (var k=0; k<cardList[i].content[j].subcontent.length; k++){ %>
+            <div class="card col-lg-4">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="../images/disinfect_1.png" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <p class="card-text"><%= cardList[i].name_title %>:
+                      <%= cardList[i].content[j].subcontent[k].name %></p>
+                  <% if(cardList[i].content[j].subcontent[k].size_title == "연면적"){ %>
+                    <p class="card-text"><%= cardList[i].content[j].subcontent[k].size_title %>:
+                      <%= cardList[i].content[j].subcontent[k].size %>m<sup>2</sup></p>
+                  <%} else{%>
+                    <p class="card-text"><%= cardList[i].content[j].subcontent[k].size_title %>:
+                      <%= cardList[i].content[j].subcontent[k].size %></p>
+                  <%}%>
+                    <p class="card-text"><%= cardList[i].range_title %>:
+                      <%= cardList[i].content[j].subcontent[k].range %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <%}%>
         </div>
-        <div style="margin-top: 4rem;" class="col-xs-4 mlg-4 col">
-            <img src="../images/elseclients.png" alt="chart">
-        </div>
-      </div>
+        <% if(j+1 != cardList[i].content.length){%>
+        <hr align="center" class="one" color="gray" width="80%">
+        <%} %>
+      <%}%>
     </div>
   </section>
-
+<%}%>
+<section>
+  <p></p>
+</section>
 
 <%- include('footer') -%>

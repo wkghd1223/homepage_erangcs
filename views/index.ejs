@@ -23,20 +23,22 @@
 <div class="container" style="height: 3rem;"></div>
 
 <section id="history-section" class="site-section" data-aos="fade" style="padding: 0%;">
-  <hr class="one" color="gray">
+  <hr align="center" class="one" color="gray" width="80%">
   <div class="container">
     <div style="padding-top: 3rem;" class="row jsutify-content-center mb-5 text-center">
-      <div class="col-sm">
-        <table style="color: black; font-size: 1rem;" class="table">
-          <% for(var i =0; i < historyList.length; i++) {%>
+      <div class="col-md-6">
+        <table style="color: black; font-size: 1rem;" class="table table-bordered">
           <tbody>
-            <td><%= historyList[i].year %> </td>
-            <td><%= historyList[i].content %> </td>
+            <% for(var i =0; i < historyList.length; i++) {%>
+            <tr>
+              <th><%= historyList[i].year %> </th>
+              <td><%= historyList[i].content %> </td>
+            </tr>
+            <% } %>
           </tbody>
-          <% } %>
         </table>
       </div>
-      <div class="col-sm">
+      <div class="col-md-6">
         <img src="images/chart.png" alt="chart" style="width: 100%;">
       </div>
     </div>
@@ -44,20 +46,20 @@
 </section>
 
 <section id="summary-section" class="site-section" data-aos="fade" style="padding-top: 0%;">
-  <hr class="one" color="gray">
+  <hr align="center" class="one" color="gray" width="80%">
   <div class="container">
     <h3 style="padding:2rem; text-align: center;"><%= service %></h3>
     <div class="card-deck row">
       <% for(var i=0; i<summaryList.length; i++){%>
       <div class="col-xl-3 col-md-6">
-      <div class="card">
-        <img src="images/<%= summaryList[i].src %>" class="card-img-top" alt="<%= summaryList[i].title %>">
-        <div class="card-body">
-          <h5 class="card-title"><%= summaryList[i].title %></h5>
-          <p class="card-text"><%= summaryList[i].description %></p>
+        <div class="card">
+          <img src="images/<%= summaryList[i].src %>" class="card-img-top" alt="<%= summaryList[i].title %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= summaryList[i].title %></h5>
+            <p class="card-text"><%= summaryList[i].description %></p>
+          </div>
         </div>
       </div>
-    </div>
       <%}%>
   </div></div>
   
