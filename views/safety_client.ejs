@@ -9,7 +9,7 @@
         <section>
             <div>
                 <b>
-                    <h3 class="text-danger">
+                    <h3 class="text-warning">
                         <svg class="bi bi-pentagon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -22,9 +22,12 @@
                 <table class="table table-bordered text-center" style="width: 100%;">
                     <thead>
                         <tr style="background-color: ivory;">
-                            <%for(var j=0; j<cardList[i].sub_title.length;j++){%>
-                            <th scope="col"><%= cardList[i].sub_title[j]%></th>
-                            <%}%>
+                            <th scope="col" style="width: 30%;">
+                                관리분야
+                            </th>
+                            <th scope="col" style="width: 70%;">
+                                관리내용
+                            </th>
                         </tr>
                     </thead>
                     <%for(var j=0; j<cardList[i].content.length;j++){%>
@@ -43,7 +46,7 @@
                 <table class="table table-bordered" style="font-size: 12px;">
                     <%for(var j=0; j<cardList[i].client_info.length;j++){%>
                     <tbody>
-                        <td class="my-gradient">
+                        <td class="<%= (j%2==0) ? "safety-gradient": "safety-gradient-reverse"%> ">
                             <%= cardList[i].client_info[j].name%>
                         </td>
                         <td class="my-cell">

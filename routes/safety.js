@@ -32,7 +32,66 @@ router.get('/intro', function(req, res, next) {
 });
 
 router.get('/system',function(req, res, next){
-    res.render('safety_system',{title: 'safety_system'});
+    var card={
+        title:"안전관리 시스템 개요",
+        content:[
+            {
+                title:"Smart 현장관리",
+                src:"img1.png",
+                list:[
+                    "현장작업계획",
+                    "현장작업지시서",
+                    "현장감시/점검",
+                    "작업보고",
+                    "설비/시설관리 정보 연동",
+                    "QR, VR, AR 연동"
+                ],
+                img_list:[{
+                    title:"설비유지관리",
+                    src:"item1-1.png"
+                },{
+                    title:"MEP관리",
+                    src:"item1-2.png"
+                },{
+                    title:"환경/안전",
+                    src:"item1-3.png"
+                },{
+                    title:"프로젝트관리",
+                    src:"item1-4.png"
+                }]
+            },
+            {
+                title:"통합 환경안전/3D관제/원격제어",
+                src:"img2.png",
+                list:[
+                    "IoT 기기자동화",
+                    "SPC 자율제어",
+                    "3D 모니터링",
+                    "기간시스템과 데이터연동",
+                    "위험 감지/감시",
+                    "CCTV&3D융합"
+                ],
+                img_list:[{
+                    title:"상태관리",
+                    src:"item2-1.png"
+                },{
+                    title:"자율제어",
+                    src:"item2-2.png"
+                },{
+                    title:"위험 감지/감시",
+                    src:"item2-3.png"
+                },{
+                    title:"안전/보안",
+                    src:"item2-4.png"
+                }]
+            }
+        ]
+    };
+    card = JSON.stringify(card);
+    res.render('safety_system',{
+        title: 'safety_system',
+        card: card
+    });
 });
 
 router.get('/client',function(req, res, next){
