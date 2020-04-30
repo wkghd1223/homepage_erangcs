@@ -1,11 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('disinfect', { title: 'disinfect' });
-});
-router.get('/intro', function(req, res, next){
+router.get('/', function(req, res, next){
     var infect = [
         {
             title:[{
@@ -36,24 +32,16 @@ router.get('/intro', function(req, res, next){
                 type: "방역 / 청소"
             }]
     }];
+
+    card = JSON.stringify(card);
     infect = JSON.stringify(infect);
-    card = JSON.stringify(card);
 
-    res.render('disinfect_intro', { 
-        title: 'disinfect_intro',
+    res.render('disinfect', { 
         infect: infect,
-        card: card
+        card: card,
+
     });
 
-});
-
-router.get('/client',function(req, res, next){
-
-    card = JSON.stringify(card);
-    res.render('disinfect_client',{
-        title: "disinfect_client",
-        card: card
-    });
 });
 
 module.exports = router;

@@ -1,18 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('cleaning', {
-        title: 'cleaning'
-    });
-});
-
-
-router.get('/intro', function (req, res, next) {
     var cleaning_title = '준공청소 서비스 소개';
     var cleaning_info = `준공청소 서비스는 체계적인 시스템으로 건물주와 입주자가 동시에 만족할 수 있도록 그 건물의 특징에 맞는 청소 서비스를 하여드립니다.`;
-    var card = {
+    var cleaning = {
         src: "facility_2.png",
         name: "준공청소",
         sub: [{
@@ -39,20 +31,8 @@ router.get('/intro', function (req, res, next) {
         }, {
             title: "08. 청소완료",
             descript: "고객 확인 후 청소완료 대금 지불"
-        },],
-
+        }]
     };
-    card = JSON.stringify(card);
-    res.render('cleaning_intro', {
-        cleaning_title, cleaning_title,
-        cleaning_info,
-        title: 'cleaning_intro',
-        card: card
-    });
-});
-
-
-router.get('/client', function (req, res, next) {
     var card = [{
         title: "준공청소",
         sub_title: ["관 리 분 야", "관 리 내 용"],
@@ -91,11 +71,13 @@ router.get('/client', function (req, res, next) {
         }]
     }];
     card = JSON.stringify(card);
-    res.render('cleaning_client', {
-        title: "cleaning_client",
+    cleaning = JSON.stringify(cleaning);
+    res.render('cleaning', {
+        cleaning_title: cleaning_title,
+        cleaning_info:cleaning_info,
+        cleaning : cleaning,
         card: card
     });
 });
-
 
 module.exports = router;
