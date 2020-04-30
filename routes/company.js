@@ -9,6 +9,14 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/intro', function (req, res, next) {
+  var titles =[
+    "회사 개요",
+    "CREDIT RATING",
+    "지사 현황",
+    "연혁",
+    "자격증명서"
+  ];
+  titles = JSON.stringify(titles);
   var overview = [{
     "title": "회사명",
     "content": "주식회사 이랑씨에스"
@@ -29,14 +37,6 @@ router.get('/intro', function (req, res, next) {
     "content": "건물종합관리(시설/미화/보안(경비)/주차/안전지킴이)"
   }];
   overview = JSON.stringify(overview);
-  res.render('company_intro', {
-    title: 'company_intro',
-    overview: overview
-  });
-});
-
-
-router.get('/history', function (req, res, next) {
   var history = [{
     "year": "2009.02",
     "content": "(주)이랑씨에스 법인 설립"
@@ -66,8 +66,10 @@ router.get('/history', function (req, res, next) {
     "content": "(주)이랑씨에스 법인 변경"
   }];
   history = JSON.stringify(history);
-  res.render('company_history', {
-    title: 'company_history',
+  res.render('company_intro', {
+    title: 'company_intro',
+    titles: titles,
+    overview: overview,
     history: history
   });
 });
@@ -260,14 +262,6 @@ router.get('/client', function (req, res, next) {
   res.render('company_client', {
     title: 'company_client',
     card: card
-  });
-});
-
-router.get('/certification', function (req, res, next) {
-  var certis = '자격 증명서';
-  res.render('company_certification', {
-    title: 'company_certification',
-    certis: certis
   });
 });
 
