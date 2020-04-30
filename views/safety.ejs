@@ -12,32 +12,33 @@
 	<div class="container">
 		<div class="row mb-5 justify-content-around">
 			<% for(var i =0 ; i < safetyIntro.length; i++){ %>
-			<div class="card" style="width:25rem;margin:0.5rem;" >
+			<div class="card col-sm-9 col-md-7 col-lg-5">
 				<% for(var j =0 ; j < safetyIntro[i].title.length;j++) {%>
 				<div class="row">
-					<div class="col-3 card-img-top" style="height:6rem;padding-right:0px;">
-						<img src="/images/<%=safetyIntro[i].title[j].src%>" alt="<%=safetyIntro[i].title[j].item%>" style="height:100%;">
+					<div class="col-3 card-img-top card-img">
+						<img src="/images/<%=safetyIntro[i].title[j].src%>" alt="<%=safetyIntro[i].title[j].item%>" 
+						style="height:100%;">
 					</div>
-					<div class="col-9 text-center">
+					<div class="col-9 sm-space text-center">
 						<b>
-							<h5 class="card-title" style="padding-top:0.5rem;">
+							<h5 class="card-title sm-space">
 								<%= safetyIntro[i].title[j].name %>
 							</h5>
 						</b>
-						<p style="padding-left:0.5rem;padding-right:0.5rem;margin:0%;font-size: 11pt;text-align: center;">
+						<p class="card-content">
 							<%=safetyIntro[i].title[j]._desc%>
 						</p>
 					</div>
 				</div>
 				<% }%>
-				<div class="card-body" style="padding: 0%; font-size: 11pt; color:crimson; text-align: center;" >
+				<div class="sm-space card-body text-danger text-center">
 					<%=safetyIntro[i].content_highlight%>
 				</div>
-				<div class="card-body" style="padding: 0%; font-size: 11pt; text-align: center;">
+				<div class="card-body text-center">
 					<%=safetyIntro[i].content%>
 				</div>
 
-				<div class="card-body" style="padding: 0%; font-size: 11pt;">
+				<div class="card-body sm-space">
 					<ul class="marker-circle">
 						<% for(var j=0; j < safetyIntro[i].list.length;j++){ %>
 						<li class="card-text">
@@ -141,7 +142,7 @@
                 </table>
             </div>
             <div>
-                <table class="table table-bordered" style="font-size: 12px;">
+                <table class="table table-bordered card-body">
                     <%for(var j=0; j<cardList[i].client_info.length;j++){%>
                     <tbody>
                         <td class="<%= (j%2==0) ? "safety-gradient": "safety-gradient-reverse"%> ">

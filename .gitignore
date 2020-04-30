@@ -6,5 +6,5 @@ public/javascripts/*
 public/stylesheets/*
 !public/stylesheets/style.css
 public/images/*
-!public/images/marker/*
+!public/images/marker/*.png
 public/fonts/*

@@ -10,31 +10,30 @@
 	<div class="container">
 		<div class="row mb-5 justify-content-around">
 			<% for(var i =0 ; i < introList.length; i++){ %>
-			<div class="card" style="width:20rem;margin:0.5rem;">
+			<div class="card col-sm-9 col-md-7 col-lg-5">
 				<% for(var j =0 ; j < introList[i].title.length;j++) {%>
 				<div class="row">
-					<div class="col-3 card-img-top" style="height:6rem;padding-right:0px;">
+					<div class="col-3 card-img-top card-img">
 						<img src="/images/<%=introList[i].title[j].src%>" alt="<%=introList[i].title[j].item%>"
 							style="height:100%;">
 					</div>
-					<div class="col-9 text-center">
+					<div class="col-9 text-center sm-space">
 						<b>
-							<h5 class="card-title">
+							<h5 class="card-title sm-space">
 								<%= introList[i].title[j].name %>
 							</h5>
 						</b>
-						<p
-							style="font-size: 10pt; padding-left: 3%;">
+						<p class="card-content">
 							<%=introList[i].title[j]._desc%>
 						</p>
 					</div>
 				</div>
 				<% }%>
-				<p class="card-body" style="margin: 0%; padding: 0%; font-size: 11pt; text-align: center;">
+				<div class="sm-space card-body text-danger text-center">
 					<%=introList[i].content_highlight%>
-					<br><%=introList[i].content%>
-				</p>
-				<div class="card-body" style="padding: 0%; font-size: 11pt;">
+				</div>
+				<div class="card-body text-center"><%=introList[i].content%></div>
+				<div class="card-body sm-space">
 					<ul class="marker-circle">
 						<% for(var j=0; j < introList[i].list.length;j++){ %>
 						<li class="card-text">
@@ -107,7 +106,7 @@
                 </table>
             </div>
             <div>
-                <table class="table table-bordered" style="font-size: 12px;">
+                <table class="table table-bordered card-body">
                     <%for(var j=0; j<cardList[i].client_info.length;j++){%>
                     <tbody>
                         <td class="facility-gradient">

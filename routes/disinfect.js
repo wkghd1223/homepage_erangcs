@@ -5,7 +5,7 @@ router.get('/', function(req, res, next){
     var infect = [
         {
             title:[{
-                src:"etc_1.png",
+                src:"disinfect_2.png",
                 name:"방역/소독",
                 _desc:"살충소독/살균소독/구서작업/정화조관리"
             }],

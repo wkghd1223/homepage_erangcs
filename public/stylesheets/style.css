@@ -1807,7 +1807,7 @@ h1, h2, h3, h4, h5,
   background: rgb(193,0,59);
   background: linear-gradient(90deg, rgba(193,0,59,1) 13%, rgba(252,93,3,1) 100%, rgba(255,38,0,1) 100%);
   color: white;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 1px 1px 6px black, -1px -1px 6px black;
 }
 .cleaning-gradient{
   padding-left: 10px;
@@ -1815,13 +1815,14 @@ h1, h2, h3, h4, h5,
   background: rgb(0,122,64);
   background: linear-gradient(90deg, rgba(0,122,64,1) 0%, rgba(2,191,75,1) 23%, rgba(0,185,171,1) 100%);
   color: white;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 1px 1px 6px black, -1px -1px 6px black;
 }
 .facility-gradient{
   padding-left: 10px;
   padding-right: 10px;
   color: white;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 1px 1px 6px black, -1px -1px 6px black;
+  
   background: rgb(141,0,184);
   background: linear-gradient(90deg, rgba(141,0,184,1) 0%, rgba(191,2,142,1) 23%, rgba(185,0,38,1) 100%);
 }
@@ -1892,4 +1893,23 @@ h5 {
 .space{
   margin-top:3rem;
   margin-bottom: 3rem;
+}
+.sm-space{
+  padding-top: 0.5rem;
+}
+.card-img{
+  height:6rem;
+  padding-right:0px;
+  padding-left: 0px;
+}
+.card-content{
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+  margin:0%;
+  font-size: 11pt;
+  text-align: center;
+}
+.card-body{
+  padding: 0%; 
+  font-size: 11pt;
 }
