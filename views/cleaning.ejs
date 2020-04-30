@@ -6,16 +6,16 @@
 	<div class="container space">
 	  <h3 class="font-weight-bold"><%= cleaning_title %></h3>
 	  <p> <%= cleaning_info %> </p>
-	  <div class="row mb-5 justify-content-around">
+	  <div class="row justify-content-around">
 		<!-- 큰 카드 -->
-		<div class="card">
+		<div class="card-deck text-center">
 		  <div class="row">
 			<!-- 이미지 부분 -->
 			<div class="col-12 col-sm-12 col-md-3 col-lg-3">
 				<!-- 이미지 -->
 			  <div class="row justify-content-around">
         <img src="/images/<%=cleaningIntro.src%>" alt="준공청소" 
-        style="height: 100%; padding-left: 1rem;">
+        style="height: 100%;">
 			  </div>
 			  <!-- 내용 -->
 			  <div class="row justify-content-around">
@@ -96,10 +96,10 @@
 				  <td class="cleaning-gradient">
 					<%= cardList[i].client_info[j].name%>
 				  </td>
-				  <td class="my-cell">
+				  <td class="my-cell client-row1">
 					<%= cardList[i].client_info[j].address%>
 				  </td>
-				  <td class="my-cell text-center">
+				  <td class="my-cell text-center client-row2">
 					<%= cardList[i].client_info[j].type%>
 				  </td>
 				</tbody>
