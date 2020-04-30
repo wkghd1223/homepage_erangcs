@@ -2,35 +2,39 @@
 <% var cleaningIntro = JSON.parse(cleaning) %>
 <% var cardList = JSON.parse(card) %>
 
-<section id="section-introduce">
+<section id="section-introduce" data-aos="fade-up">
 	<div class="container space">
 	  <h3 class="font-weight-bold"><%= cleaning_title %></h3>
 	  <p> <%= cleaning_info %> </p>
 	  <div class="row mb-5 justify-content-around">
+		<!-- 큰 카드 -->
 		<div class="card">
 		  <div class="row">
-			<div class="col-xs-12 col-md-2" style="margin-top:14px;">
+			<!-- 이미지 부분 -->
+			<div class="col-12 col-sm-12 col-md-3 col-lg-3">
+				<!-- 이미지 -->
 			  <div class="row justify-content-around">
-				<img src="/images/<%=cleaningIntro.src%>" alt="준공청소" style="width: 70%;">
+        <img src="/images/<%=cleaningIntro.src%>" alt="준공청소" 
+        style="height: 100%; padding-left: 1rem;">
 			  </div>
+			  <!-- 내용 -->
 			  <div class="row justify-content-around">
-				<h5 class="card-title font-weight-bold">
+				<h5 class="card-title font-weight-bold sm-space">
 				  <%= cleaningIntro.name %>
 				</h5>
 			  </div>
 			</div>
-
-			<div class="col-xs-12 col-md-10 text-center">
-			  <div class="row" style="margin-top:10px; margin-bottom:10px;">
+			<!-- 카드들 -->
+			<div class="col-12 col-sm-12 col-md-9 col-lg-9 text-center">
+			  <div class="row card-content ">
 				<% for (var j=0;j<cleaningIntro.sub.length;j++){%>
-				<div class="col-xs-12 col-md-6 col-lg-3">
-				  <div class="card" style="margin-top:4px; margin-bottom:4px;">
-					<strong><b>
-						<div class="card-title text-info">
+				<div class="col-6 col-sm-6 col-md-6 col-lg-3 sm-space">
+				  <div class="card sm-space">
+					<b>
+						<div class="card-content card-title text-info">
 						  <%=cleaningIntro.sub[j].title%>
-						</div>
-						<p>
-					  </b></strong>
+						</div></b>
+						<p class="card-content">
 					<%=cleaningIntro.sub[j].descript%>
 					</p>
 				  </div>
@@ -44,7 +48,7 @@
 	  </div>
 </section>
 
-<section id="section-safety-client">
+<section id="section-safety-client" data-aos="fade-up">
   <div class="container space">
 	<h2>준공청소 현황</h2>
 	  <% for(var i=0; i< cardList.length;i++){%>

@@ -16,14 +16,17 @@
           <div class="card-body">
             <ul class="list-group">
               <li class="list-group-item">
-                <div class="row row-cols-1 row-cols-md-3">
+                <div class="row row-cols-1 row-cols-md-3 justify-content-betwwen">
                   <% for (var k=0; k<cardList[i].content[j].subcontent.length; k++){ %>
-                    <div class="card col-lg-4">
+                    <!-- 카드 안 카드 -->
+                    <div class="card col-sm-11 col-md-6 col-lg-4 col-xl-4">
                       <div class="row no-gutters">
-                        <div class="col-md-4">
+                        <!-- 이미지 부분 -->
+                        <div class="col-4 col-sm-3 col-md-4 col-lg-4">
                           <img src="../images/disinfect_1.png" class="card-img" alt="...">
                         </div>
-                        <div class="col-md-8">
+                        <!-- 이미지 옆 내용 -->
+                        <div class="col-8 col-sm-9 col-md-8 col-lg-8">
                           <div class="card-body">
                             <p class="card-text"><%= cardList[i].name_title %>:
                             <%= cardList[i].content[j].subcontent[k].name %></p>

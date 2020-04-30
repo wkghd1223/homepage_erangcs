@@ -2,21 +2,25 @@
 <% var introList = JSON.parse(intro) %>
 <% var cardList = JSON.parse(card) %>
 
-<section id="section-facility-overview">
+<section id="section-facility-overview" data-aos="fade-up">
 	<div class="container space">
 		<h2><%= facility_title %></h2>
 		<p><%=facility_info%></p>
 	</div>
 	<div class="container">
 		<div class="row mb-5 justify-content-around">
+			<!-- 카드 갯수만큼 반복 -->
 			<% for(var i =0 ; i < introList.length; i++){ %>
-			<div class="card col-sm-9 col-md-7 col-lg-5">
+			<!-- 카드 전체 -->
+			<div class="card col-9 col-sm-9 col-md-6 col-lg-4">
 				<% for(var j =0 ; j < introList[i].title.length;j++) {%>
 				<div class="row">
+					<!-- 이미지 -->
 					<div class="col-3 card-img-top card-img">
 						<img src="/images/<%=introList[i].title[j].src%>" alt="<%=introList[i].title[j].item%>"
 							style="height:100%;">
 					</div>
+					<!-- 이미지 내용 -->
 					<div class="col-9 text-center sm-space">
 						<b>
 							<h5 class="card-title sm-space">
@@ -28,6 +32,7 @@
 						</p>
 					</div>
 				</div>
+				<hr>
 				<% }%>
 				<div class="sm-space card-body text-danger text-center">
 					<%=introList[i].content_highlight%>
@@ -48,7 +53,7 @@
 	</div>
 </section>
 
-<section id="section-introduce">
+<section id="section-introduce" data-aos="fade-up">
 	<div class="container space">
 		<div class="row">
 			<div class="col justify-content-center ">
@@ -67,7 +72,7 @@
 	</div>
 </section>
 
-<section id="section-facility-client">
+<section id="section-facility-client" data-aos="fade-up">
 	<div class="container space">
 		<h2 >시설관리 현황</h2>
         <% for(var i=0; i< cardList.length;i++){%>

@@ -18,9 +18,7 @@
   </div>
 </div>
 
-<div class="container" style="height: 3rem;"></div>
-
-<section id="history-section" class="site-section" data-aos="fade" style="padding: 0%;">
+<section id="history-section" class="site-section space" data-aos="fade-up" >
   <div class="container">
     <div style="padding-top: 3rem;" class="row jsutify-content-center mb-5 text-center">
       <div class="col-md-6">
@@ -35,24 +33,24 @@
           </tbody>
         </table>
       </div>
-      <div class="col-md-6">
-        <img src="images/chart.png" alt="chart" style="width: 100%;">
+      <div class="col-md-6 space">
+        <img src="images/chart.png" alt="chart" style="width: 80%;">
       </div>
     </div>
   </div>
 </section>
 
-<section id="summary-section" class="site-section" data-aos="fade" style="padding-top: 0%;">
+<section id="summary-section" class="site-section space">
   <div class="container">
     <h2 style="padding:2rem; text-align: center;"><%= service %></h2>
     <div class="card-deck row">
       <% for(var i=0; i<summaryList.length; i++){%>
-      <div class="col-xl-3 col-md-6">
-        <div class="card">
+      <div class="sm-space col-6 col-sm-6 col-md-3 col-lg-3">
+        <div class="card" data-aos="fade-up" >
           <img src="images/<%= summaryList[i].src %>" class="card-img-top" alt="<%= summaryList[i].title %>">
-          <div class="card-body">
-            <h5 class="card-title"><%= summaryList[i].title %></h5>
-            <p class="card-text"><%= summaryList[i].description %></p>
+          <div class="card-body text-center">
+            <h5 class="sm-space card-title"><%= summaryList[i].title %></h5>
+            <p class="card-text card-content"><%= summaryList[i].description %></p>
           </div>
         </div>
       </div>
