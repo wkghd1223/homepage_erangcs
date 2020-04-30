@@ -3,7 +3,7 @@
 <% var cardList = JSON.parse(card) %>
 
 <section id="section-facility-overview">
-	<div class="container">
+	<div class="container space">
 		<h2><%= facility_title %></h2>
 		<p><%=facility_info%></p>
 	</div>
@@ -35,7 +35,7 @@
 					<br><%=introList[i].content%>
 				</p>
 				<div class="card-body" style="padding: 0%; font-size: 11pt;">
-					<ul class="maker-circle">
+					<ul class="marker-circle">
 						<% for(var j=0; j < introList[i].list.length;j++){ %>
 						<li class="card-text">
 							<%= introList[i].list[j] %>
@@ -69,8 +69,8 @@
 </section>
 
 <section id="section-facility-client">
-	<div class="container">
-		<h2 class="space">시설관리 현황</h2>
+	<div class="container space">
+		<h2 >시설관리 현황</h2>
         <% for(var i=0; i< cardList.length;i++){%>
         <section class="space">
             <div>

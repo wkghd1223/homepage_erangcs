@@ -2,8 +2,9 @@
 .git
 key/*
 node_modules/*
-public/*
 public/javascripts/*
 public/stylesheets/*
 !public/stylesheets/style.css
+public/images/*
+!public/images/marker/*
 public/fonts/*

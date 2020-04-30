@@ -1,13 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('safety', { title: 'safety' });
-});
-
-router.get('/intro', function(req, res, next) {
-    var card =[
+    var safetyIntro =[
         {   
             title:[{
                 src:"safety_1.png",
@@ -24,15 +19,7 @@ router.get('/intro', function(req, res, next) {
             list:["위험요소제거", "위험구역설정","작업자행동통제", "현장인원출입관리", "위험장비밀착관리", "화재사고방지점검"]
         },
     ];
-    card = JSON.stringify(card);
-    res.render('safety_intro', { 
-        title: 'safety_intro',
-        card: card
-    });
-});
-
-router.get('/system',function(req, res, next){
-    var card={
+    var safetySystem={
         title:"안전관리 시스템 개요",
         content:[
             {
@@ -87,14 +74,6 @@ router.get('/system',function(req, res, next){
             }
         ]
     };
-    card = JSON.stringify(card);
-    res.render('safety_system',{
-        title: 'safety_system',
-        card: card
-    });
-});
-
-router.get('/client',function(req, res, next){
     var card =[
         {
             title: "건설",
@@ -159,10 +138,13 @@ router.get('/client',function(req, res, next){
                 type: "안전관리"
             }]
     }];
+    safetySystem = JSON.stringify(safetySystem);
+    safetyIntro = JSON.stringify(safetyIntro);
     card = JSON.stringify(card);
-    res.render('safety_client',{
-        title: "safety_client",
-        card: card
+    res.render('safety', {
+        safetyIntro: safetyIntro,
+        safetySystem:safetySystem,
+        card:card
     });
 });
 

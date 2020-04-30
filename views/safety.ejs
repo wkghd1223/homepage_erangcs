@@ -1,0 +1,167 @@
+<%- include('header') -%>
+<% var safetyIntro = JSON.parse(safetyIntro) %>
+<% var safetySystem = JSON.parse(safetySystem) %>
+<% var cardList = JSON.parse(card) %>
+
+<section id="section-facility-overview">
+	<div class="container space">
+		<h2>안전관리</h2>
+		<p style="margin-bottom:1rem;">이랑씨에스는 건설현장 내 중대재해 가능요소를 사전 예방, 제거를 함으로써 현장근로자의 안전과 회사의 생산성 향상에 그 목적이 있으며 안전 사고 없는 무재해, 무사고 현장구축을 하고 있습니다.
+         </p>
+	</div>
+	<div class="container">
+		<div class="row mb-5 justify-content-around">
+			<% for(var i =0 ; i < safetyIntro.length; i++){ %>
+			<div class="card" style="width:25rem;margin:0.5rem;" >
+				<% for(var j =0 ; j < safetyIntro[i].title.length;j++) {%>
+				<div class="row">
+					<div class="col-3 card-img-top" style="height:6rem;padding-right:0px;">
+						<img src="/images/<%=safetyIntro[i].title[j].src%>" alt="<%=safetyIntro[i].title[j].item%>" style="height:100%;">
+					</div>
+					<div class="col-9 text-center">
+						<b>
+							<h5 class="card-title" style="padding-top:0.5rem;">
+								<%= safetyIntro[i].title[j].name %>
+							</h5>
+						</b>
+						<p style="padding-left:0.5rem;padding-right:0.5rem;margin:0%;font-size: 11pt;text-align: center;">
+							<%=safetyIntro[i].title[j]._desc%>
+						</p>
+					</div>
+				</div>
+				<% }%>
+				<div class="card-body" style="padding: 0%; font-size: 11pt; color:crimson; text-align: center;" >
+					<%=safetyIntro[i].content_highlight%>
+				</div>
+				<div class="card-body" style="padding: 0%; font-size: 11pt; text-align: center;">
+					<%=safetyIntro[i].content%>
+				</div>
+
+				<div class="card-body" style="padding: 0%; font-size: 11pt;">
+					<ul class="marker-circle">
+						<% for(var j=0; j < safetyIntro[i].list.length;j++){ %>
+						<li class="card-text">
+							<%= safetyIntro[i].list[j] %>
+						</li>
+						<% }%>
+					</ul>
+				</div>
+			</div>
+			<% } %>
+		</div>
+	</div>
+</section>
+
+<section id="section-introduce">
+	<div class="container space">
+	  <h2><%= safetySystem.title  %> </h2>
+	  <% for(var i =0; i<safetySystem.content.length; i++){ %>
+	  <div class="row space">
+		<!-- smart현장관리 -->
+		<div class="card col-xs-12 col-md-6 col-lg-5">
+		  <div class="container row">
+			<h3>
+			  <%= safetySystem.content[i].title %> 
+			</h3>
+		  </div>
+		  <div class="row">
+			<!-- 이미지 -->
+			<div class="col-xs-12 col-md-6">
+			  <img src="../images/safety/<%= safetySystem.content[i].src %>" alt="1" style="width: 100%;">
+			</div>
+			<!-- 리스트 -->
+			<div class="container col-xs-12 col-md-6">
+			  <ul class="marker-break">
+				<% for(var j =0; j<safetySystem.content[i].list.length; j++){ %>
+				  <li><%= safetySystem.content[i].list[j] %> </li>
+				  <% } %>
+				</ul>
+			</div>
+		  </div>
+		</div>
+		<!-- 오른쪽 리스트 -->
+		<div class="card col-xs-12 col-md-6 col-lg-7">
+		  <div class="row">
+			<% for(var j =0; j<safetySystem.content[i].img_list.length; j++){ %>
+			  <div class="container col-xs-6 col-md-6 col-lg-3">
+				<div class="row justify-content-around">
+				  <h5><%= safetySystem.content[i].img_list[j].title %></h5> 
+				</div>
+				<div class="row">
+			  <img src="../images/safety/<%= safetySystem.content[i].img_list[j].src %>" alt="123" style="width: 100%;">
+			   
+				</div>
+			  </div>  
+			<% } %>
+		  </div>
+		</div>
+	  </div>
+	  <% } %>
+	</div>
+  </section>
+
+  <section id="section-safety-client">
+    <div class="container space">
+        <h2>안전관리 현황</h2>
+        <% for(var i=0; i< cardList.length;i++){%>
+        <section class="space">
+            <div>
+                <b>
+                    <h3 class="text-warning">
+                        <svg class="bi bi-pentagon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 1.288l-6.842 5.56L3.733 15h8.534l2.575-8.153L8 1.288zM16 6.5L8 0 0 6.5 3 16h10l3-9.5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <%= cardList[i].title %>
+                    </h3>
+                </b>
+                <table class="table table-bordered text-center" style="width: 100%;">
+                    <thead>
+                        <tr style="background-color: ivory;">
+                            <th scope="col" style="width: 30%;">
+                                관리분야
+                            </th>
+                            <th scope="col" style="width: 70%;">
+                                관리내용
+                            </th>
+                        </tr>
+                    </thead>
+                    <%for(var j=0; j<cardList[i].content.length;j++){%>
+                    <tbody>
+                        <td>
+                            <%= cardList[i].content[j].type%>
+                        </td>
+                        <td>
+                            <%= cardList[i].content[j]._desc%>
+                        </td>
+                    </tbody>
+                    <%}%>
+                </table>
+            </div>
+            <div>
+                <table class="table table-bordered" style="font-size: 12px;">
+                    <%for(var j=0; j<cardList[i].client_info.length;j++){%>
+                    <tbody>
+                        <td class="<%= (j%2==0) ? "safety-gradient": "safety-gradient-reverse"%> ">
+                            <%= cardList[i].client_info[j].name%>
+                        </td>
+                        <td class="my-cell">
+                            <%= cardList[i].client_info[j].address%>
+                        </td>
+                        <td class="my-cell text-center">
+                            <%= cardList[i].client_info[j].type%>
+                        </td>
+                    </tbody>
+                    <%}%>
+                </table>
+            </div>
+        </section>
+        <%}%>
+            </div>
+
+
+        </section>
+
+<%- include('footer') -%>
