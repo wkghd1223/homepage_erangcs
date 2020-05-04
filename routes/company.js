@@ -86,19 +86,22 @@ router.get('/client', function (req, res, next) {
           name: "오렌지듄스 CC",
           size_title: "연면적",
           size: "1,721,882",
-          range: "미화,락카,현관"
+          range: "미화,락카,현관",
+          src: 'orangeduncecc.png'
         },
         {
           name: "인천그랜드 CC",
           size_title: "연면적",
           size: "1,386,403",
-          range: "미화,현관"
+          range: "미화,현관",
+          src: 'inchongrandcc.png'
         },
         {
           name: "이천실크밸리 CC",
           size_title: "연면적",
           size: "2,462,107",
-          range: "미화,락카,셔틀"
+          range: "미화,락카,셔틀",
+          src: 'ichonsilkvallycc.png'
         }]
       }, 
       {
@@ -107,25 +110,29 @@ router.get('/client', function (req, res, next) {
           name: "문산휴게소",
           size_title: "연면적",
           size: "52,026",
-          range: "주유, 미화"
+          range: "주유, 미화",
+          src: 'munsanshelter.png'
         },
         {
           name: "섬진강휴게소",
           size_title: "연면적",
           size: "53,420",
-          range: "미화,교통"
+          range: "미화,교통",
+          src: 'sumzingangshelter.png'
         },
         {
           name: "함안휴게소",
           size_title: "연면적",
           size: "50,174",
-          range: "캐셔"
+          range: "캐셔",
+          src: 'hamanshelter.png'
         },
         {
           name: "덕평휴게소",
           size_title: "연면적",
           size: "176,876",
-          range: "주유"
+          range: "주유",
+          src: 'duckpyungshelter.png'
         }]
       },
       {
@@ -135,25 +142,29 @@ router.get('/client', function (req, res, next) {
           name: "대상연구소",
           size_title: "연면적",
           size: "62,478",
-          range: "시설,경비,미화,조리"
+          range: "시설,경비,미화,조리",
+          src: 'daesanglaboratory.png'
         },
         {
           name: "이화다이아몬드",
           size_title: "연면적",
           size: "65,400",
-          range: "미화,경비"
+          range: "미화,경비",
+          src: 'ihwadiamond.png'
         },
         {
           name: "서천산업",
           size_title: "연면적",
           size: "71,668",
-          range: "미화,경비"
+          range: "미화,경비",
+          src: 'seochonindustry.png'
         },
         {
           name: "신광빌딩",
           size_title: "연면적",
           size: "32,926",
-          range: "미화,주차"
+          range: "미화,주차",
+          src: 'singwangbuilding.png'
         }]
       },
       {
@@ -163,6 +174,7 @@ router.get('/client', function (req, res, next) {
           size_title: "연면적",
           size: "14,379",
           range: "미화,안내,린넨",
+          src: 'selfcureorientalhospital.png'
         }]
       },
       {
@@ -172,6 +184,7 @@ router.get('/client', function (req, res, next) {
           size_title: "객실수",
           size: "243실",
           range: "미화",
+          src: 'lamadaseoulhotel.png'
         }]
       }]
     },
@@ -187,36 +200,42 @@ router.get('/client', function (req, res, next) {
           name: "테라스오포e편한세상",
           size_title: "세대수",
           size: "573세대",
-          range: "경비,안전감시"
+          range: "경비,안전감시",
+          src: 'terraceofepyeonhansesang.png'
         },
         {
           name: "신촌e편한세상",
           size_title: "세대수",
           size: "1,910세대",
-          range: "안전감시"
+          range: "안전감시",
+          src: 'sinchonepyeonhansesang.png'
         },
         {
           name: "용인한숲e편한세상",
           size_title: "세대수",
           size: "6,800세대",
-          range: "경비,미화,안전감시"
+          range: "경비,미화,안전감시",
+          src: 'yonginhanforestepyeonhansesang.png'
         }, {
           name: "서울숲e편한세상",
           size_title: "세대수",
           size: "지하7층~지상49층",
-          range: "안전감시,호이스트"
+          range: "안전감시,호이스트",
+          src: 'seoulforestepyeonhansesang.png'
         },
         {
           name: "영천e편한세상",
           size_title: "세대수",
           size: "1,210세대",
-          range: "안전감시"
+          range: "안전감시",
+          src: 'youngchonepyeonhansesang.png'
         },
         {
           name: "평거우방아이유쉘",
           size_title: "세대수",
           size: "339세대",
-          range: "경비"
+          range: "경비",
+          src: 'pyunggeoubangiushell.png'
         }]
       }]
     },
@@ -232,13 +251,15 @@ router.get('/client', function (req, res, next) {
           name: "신한은행",
           size_title: "규모",
           size: "전국지점",
-          range: "건물내 살충 및 살균"
+          range: "건물내 살충 및 살균",
+          src: 'sinhanbank.png'
         },
         {
           name: "신한데이터센터",
           size_title: "연면적",
           size: "65,400",
-          range: "방역/청소"
+          range: "방역/청소",
+          src: 'sinhandatacenter.png'
         }]
       },
       {
@@ -248,13 +269,15 @@ router.get('/client', function (req, res, next) {
           name: "남양산역금호건설",
           size_title: "세대수",
           size: "499세대",
-          range: "준공청소"
+          range: "준공청소",
+          src: 'namyangconstruction.png'
         },
         {
           name: "하남덕풍금호건설",
           size_title: "세대수",
           size: "383세대",
-          range: "준공청소"
+          range: "준공청소",
+          src: 'hanamduckpungkeumhoconstruction.png'
         }]
       }]
     }];
