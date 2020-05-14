@@ -75,6 +75,10 @@ router.get('/contact',function(req, res, next){
   res.render('contact',{title: 'contact'});
 });
 
+router.get('/merong',function(req, res, next){
+  res.render('merong',{title: 'merong'});
+});
+
 router.post('/contact',function(req, res, next){
   
   var tel = req.body.tel;

@@ -2,6 +2,13 @@
 <% var introList = JSON.parse(intro) %>
 <% var cardList = JSON.parse(card) %>
 
+
+<div class="row">
+	<div class="col-md-3 col-xs-0">
+	<%- include('nav') -%>
+	</div>
+	<div class="col-md-9 col-xs-12">
+	
 <section id="section-facility-overview" data-aos="fade-up">
 	<div class="container space">
 		<h2><%= facility_title %></h2>
@@ -133,4 +140,8 @@
     
 	
 </section>
+
+
+</div>
+</div>
 <%- include('footer') -%>

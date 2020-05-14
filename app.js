@@ -8,8 +8,6 @@ var safetyRouter = require('./routes/safety');
 var disinfectRouter = require('./routes/disinfect');
 var cleaningRouter = require('./routes/cleaning');
 
-
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/company',companyRouter);
